@@ -1,5 +1,9 @@
 {
   "name": "nuxt-express",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fitmanma/nuxtexample.git"
+  },
   "version": "1.0.0",
   "private": true,
   "scripts": {
