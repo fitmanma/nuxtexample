@@ -7,7 +7,7 @@ on:
   pull_request:
     branches: [ master ]
 jobs:
-  install:
+  deploy:
     runs-on: self-hosted
     strategy:
       matrix:
@@ -22,18 +22,5 @@ jobs:
       - run: npm cache clean --force
       - run: npm prune
       - run: npm i
-  generate:
-    runs-on: self-hosted
-    strategy:
-      matrix:
-        node-version: [12.x]
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
-    steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
       - run: npm run test
       - run: npm run generate
-      
